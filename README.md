@@ -1,9 +1,9 @@
 Swiplur
 =======
 
-![](http://i.imgur.com/2hPCWUN.png)
-![](http://i.imgur.com/pqfjChO.png)
-![](http://i.imgur.com/YJdk3lb.png)
+![](http://i.imgur.com/2hPCWUN.png =200x)
+![](http://i.imgur.com/pqfjChO.png =200x)
+![](http://i.imgur.com/YJdk3lb.png =200x)
 
 Swiplur is an iOS app aimed at providing a platform for the trade of college meal plan swipes. Currently implemented for UCLA and UC Davis. If you would like this project to include your school, please email yoavzimmerman@gmail.com.
 
