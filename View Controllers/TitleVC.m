@@ -12,6 +12,7 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "SWRevealViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TitleVC ()
 @property (weak, nonatomic) IBOutlet UIButton *fbLoginButton;
@@ -19,6 +20,13 @@
 
 @implementation TitleVC
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.fbLoginButton.layer.borderColor = self.fbLoginButton.tintColor.CGColor;
+    self.fbLoginButton.layer.cornerRadius = 5.0f;
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -80,9 +88,6 @@
             NSString *name = userData[@"name"];
             NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
             NSString *location = userData[@"location"][@"name"];
-            //NSString *gender = userData[@"gender"];
-            //NSString *birthday = userData[@"birthday"];
-            //NSString *relationship = userData[@"relationship_status"];
             
             User *currentUser = [User currentUser];
             currentUser.fullName = name;

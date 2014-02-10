@@ -27,9 +27,8 @@
     [User registerSubclass];
     [Message registerSubclass];
     
-    //set id and client key
-    [Parse setApplicationId:@"App ID goes here"
-                  clientKey:@"Client key goes here"];
+    [Parse setApplicationId:@"APPID"
+                  clientKey:@"CLIENTKEY"];
     
     //facebook integration
     [PFFacebookUtils initializeFacebook];

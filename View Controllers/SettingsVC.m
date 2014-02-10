@@ -65,8 +65,8 @@
     }
     
     //location
-    NSIndexPath *path = [NSIndexPath indexPathForRow:[Utils getLocation] inSection:[self locationSection]];
-    [self.tableView selectRowAtIndexPath:path animated:NO scrollPosition:UITableViewScrollPositionNone];
+//    NSIndexPath *path = [NSIndexPath indexPathForRow:[Utils getLocation] inSection:[self locationSection]];
+//    [self.tableView selectRowAtIndexPath:path animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 /*********/
@@ -116,42 +116,37 @@
 }
 
 
-/***********************/
-/* Table View Delegate */
-/***********************/
-
-- (NSInteger)locationSection
-{
-    return 2;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //location cells
-    if (indexPath.section == [self locationSection]) {
-        [Utils setLocation:(Location)indexPath.row];
-        NSLog(@"Set location %@", [self stringForLocation:(Location)indexPath.row]);
-    }
-    
-    //phone number cell
-    if (indexPath == [self.tableView indexPathForCell:self.phoneNumberCell]) {
-        NSLog(@"clicked phone number cell");
-    }
-}
-
-- (NSArray *)locations
-{
-    return [NSArray arrayWithObjects:[NSNumber numberWithInt:LOS_ANGELES], [NSNumber numberWithInt:DAVIS], nil];
-}
-
-- (NSString *)stringForLocation:(Location)location
-{
-    if (location == LOS_ANGELES) {
-        return @"Los Angeles";
-    } else if (location == DAVIS){
-        return @"Davis";
-    } else {
-        return @"Any";
-    }
-}
+///***********************/
+///* Table View Delegate */
+///***********************/
+//
+//- (NSInteger)locationSection
+//{
+//    return 2;
+//}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    //location cells
+//    if (indexPath.section == [self locationSection]) {
+//        [Utils setLocation:(Location)indexPath.row];
+//        NSLog(@"Set location %@", [self stringForLocation:(Location)indexPath.row]);
+//    }
+//}
+//
+//- (NSArray *)locations
+//{
+//    return [NSArray arrayWithObjects:[NSNumber numberWithInt:DAVIS], nil];
+//}
+//
+//- (NSString *)stringForLocation:(Location)location
+//{
+//    if (location == LOS_ANGELES) {
+//        return @"Los Angeles";
+//    } else if (location == DAVIS){
+//        return @"Davis";
+//    } else {
+//        return @"Any";
+//    }
+//}
 @end

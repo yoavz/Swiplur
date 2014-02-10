@@ -7,7 +7,6 @@
 //
 
 #import "Utils.h"
-#import "GSKeychain.h"
 #import "UCLABuyingPost.h"
 #import "DavisBuyingPost.h"
 
@@ -28,9 +27,10 @@
 
 + (Location)getLocation
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    long loc = [defaults integerForKey:LOCATION];
-    return (Location)loc;
+    return DAVIS;
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    long loc = [defaults integerForKey:LOCATION];
+//    return (Location)loc;
 }
 
 + (Class)getPostClass
@@ -117,10 +117,12 @@
 
 + (Location)determineLocationForLatitude:(NSNumber *)latitude andLongitude:(NSNumber *)longitude
 {
-    CLLocation *userLocation = [[CLLocation alloc]initWithLatitude:[latitude doubleValue] longitude:[latitude doubleValue]];
-    CLLocation *UCLA = [[CLLocation alloc]initWithLatitude:34.06892 longitude:-118.44518];
-    CLLocation *UCDavis = [[CLLocation alloc]initWithLatitude:38.539271 longitude:-121.760276];
+    return DAVIS;
     
-    return ([userLocation distanceFromLocation:UCLA] <= [userLocation distanceFromLocation:UCDavis] ? LOS_ANGELES : DAVIS) ;
+//    CLLocation *userLocation = [[CLLocation alloc]initWithLatitude:[latitude doubleValue] longitude:[latitude doubleValue]];
+//    CLLocation *UCLA = [[CLLocation alloc]initWithLatitude:34.06892 longitude:-118.44518];
+//    CLLocation *UCDavis = [[CLLocation alloc]initWithLatitude:38.539271 longitude:-121.760276];
+//    
+//    return ([userLocation distanceFromLocation:UCLA] <= [userLocation distanceFromLocation:UCDavis] ? LOS_ANGELES : DAVIS) ;
 }
 @end

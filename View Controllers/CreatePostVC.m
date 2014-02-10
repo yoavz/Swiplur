@@ -141,8 +141,10 @@
 
 //Check for phone number before you create the post
 - (IBAction)tryCreatePost:(id)sender {
-    if (![PFUser currentUser]) {
+    if (![User currentUser]) {
         [self alertWithMessage:@"Account Error"];
+    } else if (![[User currentUser] isVerified]) {
+        [self alertWithMessage:@"You must verify a phone number before you can make a post!"];
     }
     else {
         [self createPost:sender];

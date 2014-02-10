@@ -30,7 +30,7 @@
 - (NSArray *)menuItems
 {
     if (!_menuItems) {
-        _menuItems = @[@"forsale", @"addpost", @"inbox", @"settings", @"about"];
+        _menuItems = @[@"forsale", @"addpost", @"settings", @"about"];
     }
     return _menuItems;
 }

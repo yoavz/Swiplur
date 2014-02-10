@@ -32,9 +32,6 @@ typedef enum {
 + (BOOL)verificationKeySent;
 + (void)setVerificationKeySent:(BOOL)b;
 
-
-//clear all data
-+ (void)clear;
 + (void)debug;
 + (Location)determineLocationForLatitude:(NSNumber *)latitude andLongitude:(NSNumber *)longitude ;
 @end
