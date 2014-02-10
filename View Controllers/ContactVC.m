@@ -59,4 +59,26 @@
     
 }
 
+- (IBAction)call:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", self.user.phoneNumber]]];
+}
+
+- (IBAction)sendSMS:(id)sender {
+    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+    if([MFMessageComposeViewController canSendText])
+    {
+        controller.body = [NSString stringWithFormat:@"Hey %@! I'm interested in buying %@ swipe(s) for $%@ each.", self.user.fullName, self.post.swipeCount, self.post.askingPrice];
+        controller.recipients = [NSArray arrayWithObjects:self.user.phoneNumber, nil];
+        controller.messageComposeDelegate = self;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+}
+
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+
 @end

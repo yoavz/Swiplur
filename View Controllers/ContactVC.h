@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "User.h"
 #import "Post.h"
 
-@interface ContactVC : UIViewController
+@interface ContactVC : UIViewController<MFMessageComposeViewControllerDelegate>
 
 - (void)setUser:(User *)user ;
 - (void)setPost:(Post *)post ;

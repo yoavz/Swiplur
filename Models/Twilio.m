@@ -9,8 +9,9 @@
 #import "Twilio.h"
 #import "AFNetworking.h"
 
-#define AUTH_KEY @"AUTHKEY"
-#define SID @"SID"
+#define AUTH_KEY @"ccc3cc46f59518c3a1246eb1eca298f2"
+#define SID @"ACd1ea0bdd4d126603542d45ece1467249"
+
 
 @implementation Twilio
 
